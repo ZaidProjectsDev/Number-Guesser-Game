@@ -1,0 +1,38 @@
+<head>
+<link href="style.css" rel="stylesheet">
+<script type="module" src="script.mjs"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+<title>Pose Collection</title>
+</head>
+<body>
+
+  <section id="demos" class="invisible">
+    <header>
+      <h2>Pose Collection</h2>
+      <h4>Uses Google Mediapipe for Hand Landmark detection.</h4>
+    </header>
+    <div id="liveView" class="videoView">
+      <h2 id="detectedLabel">Nothing Detected</h2>
+      <button id="webcamButton" class="mdc-button mdc-button--raised">
+        <span class="mdc-button__ripple"></span>
+        <span class="mdc-button__label">Enable Webcam</span>
+      </button>
+      <button id="poseAddButton">Add New Pose</button>
+      <button id="poseExportButton">Export JSON</button>
+      <button id="loadFromJsonButton">Load JSON</button>
+      <button id="poseSaveButton">Save Current Poses to localstorage</button>
+      <button id="poseReloadButton">Reload Pose Array from localstorage</button>
+      <button id="poseRecordButton">Record Pose Data</button>
+      <button id="poseDeleteButton">Delate Current Pose</button>
+      <button id="modelPredictButton">PredictPoses</button>
+      <select id="poseList">
+
+      </select>
+      <div style="position: relative;">
+        <video id="webcam" style="position: abso" autoplay playsinline></video>
+        <canvas class="output_canvas" id="output_canvas" style="position: absolute; left: 0px; top: 0px;"></canvas>
+      </div>
+    </div>
+  </section>
+  </body>

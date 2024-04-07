@@ -1,0 +1,45 @@
+<!-- Copyright 2023 The MediaPipe Authors.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. -->
+<head>
+<link href="style.css" rel="stylesheet">
+<script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+<script type="module" src="script.mjs"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+<title>Model Training</title>
+</head>
+<body>
+  <section>  
+  <header>
+    <h2>Model Training and Accuracy</h2>
+    <h3>Uses Ml5.js for neural network training of the pose data.</h3>
+  </header>
+    <div id="liveView" class="videoView">
+      <h2 id="modelStatus">ModelStatus</h2>
+      <h4>Uses your OS's file explorer</h4>
+      <button id="loadFromJsonButton">Load poses JSON</button>
+      <h4>Trains the model using the pose data from the JSON you loaded.</h4>
+      <button id="modelTrainButton">Train</button>
+      <h4>Downloads the freshly trained model</h4>
+      <button id="modelExportButton">Export Model</button>
+      <button id="dataExportButton">Export Test Data</button>
+      <section>
+        <h2 id="poseCounter">No Poses Loaded Yet</h2>
+        <table id="poseTable">
+
+        </table>
+      </section>
+    </div>
+  </section>
+  </body>

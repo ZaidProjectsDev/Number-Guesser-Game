@@ -1,0 +1,26 @@
+<head>
+<link href="style.css" rel="stylesheet">
+<script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+<script type="module" src="script.mjs"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+<title>Model Testing</title>
+</head>
+<body>
+  <section>  
+  <header>
+    <h2>Model Accuracy Testing</h2>
+    <h3>Uses Ml5.js for neural network model.</h3>
+  </header>
+
+      <h2 id="modelStatus">ModelStatus</h2>
+      <h4>Loads the model</h4>
+      <button id="modelLoadButton">Load Model from "/model"</button>
+      <h4>Runs the model</h4>
+      <button id="modelTestButton">Test the loaded model</button>
+      <h2>Label Accuracy Matrix</h2>
+      <div id ="results" class="results">
+
+      </div>
+  </section>
+  </body>
