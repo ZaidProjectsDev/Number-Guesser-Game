@@ -58,37 +58,7 @@ export async function trainNN(arrData,epochNum=50)
     nn.train({ epochs: epochNum }, () => finishedTraining()) 
 }
 
-function createConfusionMatrix(trueLabels, predictedLabels) {
-    if (!Array.isArray(trueLabels) || !Array.isArray(predictedLabels)) {
-      throw new Error('Both trueLabels and predictedLabels must be arrays.');
-    }
-  
-    if (trueLabels.length !== predictedLabels.length) {
-      throw new Error('Arrays trueLabels and predictedLabels must have the same length.');
-    }
-  
-    const matrix = { TP: 0, TN: 0, FP: 0, FN: 0 };
-  
-    trueLabels.forEach((trueLabel, index) => {
-      const predictedLabel = predictedLabels[index];
-      
-      if (![0, 1].includes(trueLabel) || ![0, 1].includes(predictedLabel)) {
-        throw new Error('Labels must be 0 or 1.');
-      }
-  
-      if (trueLabel === 1 && predictedLabel === 1) {
-        matrix.TP++;
-      } else if (trueLabel === 0 && predictedLabel === 0) {
-        matrix.TN++;
-      } else if (trueLabel === 0 && predictedLabel === 1) {
-        matrix.FP++;
-      } else if (trueLabel === 1 && predictedLabel === 0) {
-        matrix.FN++;
-      }
-    });
-  
-    return matrix;
-  }
+
   
 
 export function getFlatArrayData(array)

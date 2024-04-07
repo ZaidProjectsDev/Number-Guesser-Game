@@ -12,7 +12,7 @@ let activePose = new Pose("None",[]);
 let recordingPoseData = false;
 
 
-let trainingEpochs = 10;
+let trainingEpochs = 50;
 
 
 //Get all the HTML elements 
@@ -44,56 +44,6 @@ const trainModel = async () =>{
     trainNN(poseArray,trainingEpochs);
     }
 
-}
-
-function updateStatusTextCoded(status)
-{
-    for(let i=0; i<modelStatusEnum.length; ++i)
-    {
-        if(modelStatusEnum[i].key == status)
-        {
-            document.getElementById('modelStatus').innerHTML=modelStatusEnum[i].value;
-            break;
-        }
-        if(modelStatusEnum[i].id == status)
-        {
-            document.getElementById('modelStatus').innerHTML=modelStatusEnum[i].value;
-            break;
-        }
-    }
-  
-}
-function loadModel()
-{
-    try{
-
-    model = initModel();
-    const modelInfo = {
-        model:'model/model.json',
-        metadata: 'model/model_meta.json',
-        weights: 'model/model.weights.bin',
-    }
-    model.load(modelInfo,verifyModel);
-    }
-    catch(error)
-    {
-        console.log(error);
-        updateStatusTextCoded(2)
-    }
-}
-function verifyModel()
-{
-    console.log(model);
-    if(model.ready)
-    {
-        updateStatusTextCoded(5)
-        toggleButtonVisibility(testModelButton,true);
-        loadTestData();
-    }
-    else
-    {
-        updateStatusTextCoded(2)
-    }
 }
 
 

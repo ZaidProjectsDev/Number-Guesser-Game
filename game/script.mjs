@@ -251,6 +251,10 @@ function gameUpdate()
             {
                 userWasCorrect = true;
             }
+            else
+            {
+                userWasCorrect = false;
+            }
             waitFrames++;
         }
         else
